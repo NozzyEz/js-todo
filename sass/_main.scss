@@ -1,0 +1,128 @@
+.form-holder {
+  min-height: 10vh;
+  min-width: 60vh;
+  @include flex(center, center, row);
+  margin-bottom: 4rem;
+}
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "\25BC";
+    transition: all 0.3s ease;
+    position: absolute;
+    background: white;
+    color: $secondary-color;
+    top: 0;
+    right: 0;
+    padding: 1.2rem;
+    pointer-events: none;
+  }
+  &:hover {
+    &::after {
+      color: white;
+      background: $secondary-color;
+    }
+  }
+  select {
+    appearance: none;
+    outline: none;
+    border: none;
+    width: 15rem;
+    height: 4rem;
+    color: $secondary-color;
+    // font-size: $form-text;
+    padding: 1rem;
+    cursor: pointer;
+  }
+}
+
+form {
+  @include flex(center, center, row);
+
+  input,
+  button {
+    padding: 1rem;
+    height: 4rem;
+    font-size: $form-text;
+    border: none;
+    background: $form-background;
+  }
+
+  button {
+    color: $secondary-color;
+    background: $form-background;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      background: $secondary-color;
+      color: $form-background;
+    }
+  }
+}
+
+main {
+  @include flex(center, center, column);
+}
+
+.todo-container {
+  @include flex(flex-start, center, column);
+  min-width: 60vh;
+  min-height: 50vh;
+}
+
+.todo-list {
+  list-style: none;
+  font-size: $form-text;
+  min-width: 70%;
+
+  .todo {
+    @include flex(space-between, center, row);
+    margin: 0.5rem;
+    width: 100%;
+    background: $form-background;
+    color: $default-text-color;
+    transition: all 0.7s ease;
+    .todo-item {
+      padding: 0rem 1rem;
+      flex: 1;
+    }
+    .check-btn,
+    .del-btn {
+      padding: 1.5rem;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      transition: background 0.3s ease;
+      .fas {
+        pointer-events: none;
+      }
+    }
+    .check-btn {
+      color: $success-color;
+      background: $form-background;
+      &:hover {
+        background: $success-color;
+        color: $form-background;
+      }
+    }
+    .del-btn {
+      color: $error-color;
+      background: $form-background;
+      &:hover {
+        background: $error-color;
+        color: $form-background;
+      }
+    }
+  }
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+    color: $completed-text-color;
+  }
+  .falling {
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+  }
+}

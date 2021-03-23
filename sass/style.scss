@@ -1,0 +1,42 @@
+//* Variables
+$primary-color: #202527;
+$secondary-color: #7c1ea1e5;
+$glass-color: linear-gradient(
+  45deg,
+  rgba(
+    $color: rgb(42, 25, 46),
+    $alpha: 0.25,
+  ),
+  rgba(
+    $color: #226694,
+    $alpha: 0.25,
+  )
+);
+$success-color: #309212;
+$error-color: #a81111;
+$background-color: linear-gradient(125deg, $primary-color, $secondary-color);
+$default-text-color: rgb(43, 43, 43);
+$completed-text-color: rgb(167, 167, 167);
+$text-color: white;
+$form-background: white;
+$header1: 3.5rem;
+$form-text: 2rem;
+
+//* Mixins
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+//* Fonts
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
+
+//*Imports
+@import "global";
+@import "header";
+@import "main";
+@import "footer";

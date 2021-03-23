@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  // background: $background-color;
+  background: url("/images/pexels-hasan-albari-1229861.jpg");
+  background-attachment: fixed;
+  color: $text-color;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: $header1;
+}
+
+.glass {
+  background: $glass-color;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 2rem;
+}
